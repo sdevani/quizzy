@@ -13,3 +13,4 @@ q2 = new Question({
 myQuiz = new Quiz([q1, q2]);
 quizView = new QuizView({collection: myQuiz});
 quizView.render();
+gradeView = new GradeView({collection: myQuiz});

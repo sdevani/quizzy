@@ -7,7 +7,7 @@ var Question = Backbone.Model.extend({
 
 var Quiz = Backbone.Collection.extend({
   model: Question,
-  grade: function() {
+  updateGrade: function() {
     correctCount = _.reduce(this.models, function(sum, model) {
       if (model.isCorrect()) {
         return sum + 1;
@@ -15,6 +15,7 @@ var Quiz = Backbone.Collection.extend({
         return sum;
       }
     }, 0);
-    return (correctCount * 100) / this.models.length;
+    this.grade = (correctCount * 100) / this.models.length;
+    this.trigger("complete");
   }
 })

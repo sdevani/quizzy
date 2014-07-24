@@ -21,6 +21,6 @@ var QuizView = Backbone.View.extend({
 
   scoreQuiz: function(e) {
     e.preventDefault();
-    alert("You received a " + this.collection.grade());
+    this.collection.updateGrade();
   }
 });
