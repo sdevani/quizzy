@@ -1,0 +1,28 @@
+<h1>Hello world</h1>
+
+<div class="grade">
+</div>
+<div class="quiz">
+</div>
+
+<div id="templates">
+
+  <script type="text/template" class="question-template">
+    <form>
+      <p><%= question %></p>
+      <% _.each(choices, function(choice){
+        %>
+        <input type="radio" name="<%= question %>" value="<%= choice %>"><%= choice %>
+        <br>
+        <%
+      }) %>
+    </form>
+  </script>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/backbone-min.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/quiz_view.js"></script>
+<script src="js/question_view.js"></script>
+<script src="js/main.js"></script>
